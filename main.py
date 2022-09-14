@@ -37,9 +37,9 @@ learned_list.extend(new_char.split(' '))
 
 # search for learned words in dictionary
 vol_dic_learned = {}
+vol_dic_full_learned = {}
    
 for level in keys:
-    vol_dic_learned [level]['simpl_chinese'] = search_vol(learned_list, vol_dic[level]
-                                           ['simp_chinese'].values)
-          
+    vol_dic_learned[level]= search_vol(learned_list, vol_dic[level]['simp_chinese'].values)
+    vol_dic_full_learned[level] = vol_dic[level][vol_dic[level]['simp_chinese'].isin(vol_dic_learned[level])]
     
